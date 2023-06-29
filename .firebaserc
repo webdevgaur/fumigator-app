@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "fumigator-app-749ad"
+  },
+  "targets": {
+    "fumigator-app-749ad": {
+      "hosting": {
+        "fumigator-app": [
+          "fumigator-app-749ad"
+        ]
+      }
+    }
   }
 }
