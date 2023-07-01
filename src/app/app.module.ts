@@ -13,6 +13,8 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { FormsModule } from '@angular/forms';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
     FormsModule,
+    InputTextModule,
+    ButtonModule,
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

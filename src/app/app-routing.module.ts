@@ -19,6 +19,14 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'create-new',
+    loadChildren: () => import('./modules/create-new/create-new.module').then(m => m.CreateNewModule),
+  },
+  {
+    path: 'view-previous',
+    loadChildren: () => import('./modules/view-previous/view-previous.module').then(m => m.ViewPreviousModule),
+  },
 ];
 
 @NgModule({

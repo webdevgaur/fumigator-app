@@ -1,8 +1,17 @@
-<div class="login-main">
-    <h1>Login to Fumigator</h1>
-    <input type="email" placeholder="Email" [(ngModel)]="email">
+<div class="flex flex-column align-items-center justify-content-center m-5">
+    <h1 class="mt-5 text-center">Login to Fumigator</h1>
+    <span class="p-input-icon-left mt-5">
+        <i class="pi pi-user"></i>
+        <input type="email" id="email" pInputText [(ngModel)]="email" placeholder="Email" />
+    </span>
+    <span class="p-input-icon-left mt-5">
+        <i class="pi pi-lock"></i>
+        <input type="password" id="password" pInputText [(ngModel)]="password" placeholder="Password" />
+    </span>
+    <p-button class="mt-5" label="Sign In" icon="pi pi-sign-in" type="submit" (click)="signIn()"></p-button>
+    <!-- <input type="email" placeholder="Email" [(ngModel)]="email">
     <input type="password" placeholder="Password" [(ngModel)]="password">
-    <button (click)="signIn()">Sign in</button>
+    <button (click)="signIn()">Sign in</button> -->
 </div>
 
 
