@@ -1,1 +1,30 @@
-<p>create works!</p>
+<form class="m-5 py-5" [formGroup]="fumigationForm">
+    <p class="mb-2 ml-1 text-700 ">Name of fumigant:</p>
+    <p-dropdown styleClass="w-full md:w-7" [options]="fumigantOptions" formControlName="fumigantName"></p-dropdown>    
+    <p class="mb-2 mt-4 ml-1 text-700 ">Date of fumigation:</p>
+    <p-calendar styleClass="w-full md:w-7" formControlName="fumigationDate" dateFormat="dd M yy" [showIcon]="true" [showButtonBar]="true"></p-calendar>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Place of fumigation:</p>
+    <input class="w-full md:w-7" type="text" pInputText formControlName="fumigationPlace"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Port & Country of loading:</p>
+    <input class="w-full md:w-7" type="text" pInputText formControlName="fumigationLoadingPort"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Dosage of Fumigant:</p>
+    <p-dropdown styleClass="w-full md:w-7" [options]="fumigationDosageOptions" formControlName="fumigationDosage"></p-dropdown>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Duration of Fumigation (in Hours):</p>
+    <p-dropdown styleClass="w-full md:w-7" [options]="fumigationDurationOptions" formControlName="fumigationDuration"></p-dropdown>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Minimum ambient Temperature during fumigation (°C):</p>
+    <p-inputNumber class="w-full" styleClass="w-full md:w-7" inputId="integeronly" formControlName="fumigationTemperature"></p-inputNumber>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Fumigation performed under gastight sheets:</p>
+    <p-dropdown styleClass="w-full md:w-7" [options]="isFumigationGastightOptions" formControlName="isFumigationGastight"></p-dropdown>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Container Number (or numerical link)./Seal Number:</p>
+    <textarea class="w-full md:w-7" rows="5" pInputTextarea formControlName="fumigationContainerNumbers" [autoResize]="true"></textarea>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Name & Address of Exporter:</p>
+    <textarea class="w-full md:w-7" rows="5" pInputTextarea formControlName="exporterNameAndAddress" [autoResize]="true"></textarea>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Name & Address of Importer:</p>
+    <textarea class="w-full md:w-7" rows="5" pInputTextarea formControlName="importerNameAndAddress" [autoResize]="true"></textarea>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Type and description of cargo:</p>
+    <input class="w-full md:w-7" type="text" pInputText formControlName="cargoDescription"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Country & Port of Destination:</p>
+    <input class="w-full md:w-7" type="text" pInputText formControlName="destinationPort"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Invoice Number /BL.NO.:</p>
+    <input class="w-full md:w-7" type="text" pInputText formControlName="invoiceNumber"/>
+</form>
