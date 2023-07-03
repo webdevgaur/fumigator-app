@@ -1,30 +1,57 @@
 <form class="m-5 py-5" [formGroup]="fumigationForm">
-    <p class="mb-2 ml-1 text-700 ">Name of fumigant:</p>
-    <p-dropdown styleClass="w-full md:w-7" [options]="fumigantOptions" formControlName="fumigantName"></p-dropdown>    
+    <p class="mb-2 ml-1 text-700 ">Treatment Certificate No:</p>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="treatmentCertificateNumber"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Shipping mark or brand:</p>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="brandName"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Date of issue:</p>
+    <p-calendar styleClass="w-full md:w-5" formControlName="dateOfIssue" dateFormat="dd M yy" [showIcon]="true" [showButtonBar]="true"></p-calendar>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Name of fumigant:</p>
+    <p-dropdown styleClass="w-full md:w-5" [options]="fumigantOptions" formControlName="fumigantName"></p-dropdown>    
     <p class="mb-2 mt-4 ml-1 text-700 ">Date of fumigation:</p>
-    <p-calendar styleClass="w-full md:w-7" formControlName="fumigationDate" dateFormat="dd M yy" [showIcon]="true" [showButtonBar]="true"></p-calendar>
+    <p-calendar styleClass="w-full md:w-5" formControlName="fumigationDate" dateFormat="dd M yy" [showIcon]="true" [showButtonBar]="true"></p-calendar>
     <p class="mb-2 mt-4 ml-1 text-700 ">Place of fumigation:</p>
-    <input class="w-full md:w-7" type="text" pInputText formControlName="fumigationPlace"/>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="fumigationPlace"/>
     <p class="mb-2 mt-4 ml-1 text-700 ">Port & Country of loading:</p>
-    <input class="w-full md:w-7" type="text" pInputText formControlName="fumigationLoadingPort"/>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="fumigationLoadingPort"/>
     <p class="mb-2 mt-4 ml-1 text-700 ">Dosage of Fumigant:</p>
-    <p-dropdown styleClass="w-full md:w-7" [options]="fumigationDosageOptions" formControlName="fumigationDosage"></p-dropdown>
+    <p-dropdown styleClass="w-full md:w-5" [options]="fumigationDosageOptions" formControlName="fumigationDosage"></p-dropdown>
     <p class="mb-2 mt-4 ml-1 text-700 ">Duration of Fumigation (in Hours):</p>
-    <p-dropdown styleClass="w-full md:w-7" [options]="fumigationDurationOptions" formControlName="fumigationDuration"></p-dropdown>
+    <p-dropdown styleClass="w-full md:w-5" [options]="fumigationDurationOptions" formControlName="fumigationDuration"></p-dropdown>
     <p class="mb-2 mt-4 ml-1 text-700 ">Minimum ambient Temperature during fumigation (°C):</p>
-    <p-inputNumber class="w-full" styleClass="w-full md:w-7" inputId="integeronly" formControlName="fumigationTemperature"></p-inputNumber>
+    <p-inputNumber class="w-full" styleClass="w-full md:w-5" inputId="integeronly" formControlName="fumigationTemperature"></p-inputNumber>
     <p class="mb-2 mt-4 ml-1 text-700 ">Fumigation performed under gastight sheets:</p>
-    <p-dropdown styleClass="w-full md:w-7" [options]="isFumigationGastightOptions" formControlName="isFumigationGastight"></p-dropdown>
+    <p-dropdown styleClass="w-full md:w-5" [options]="isFumigationGastightOptions" formControlName="isFumigationGastight"></p-dropdown>
     <p class="mb-2 mt-4 ml-1 text-700 ">Container Number (or numerical link)./Seal Number:</p>
-    <textarea class="w-full md:w-7" rows="5" pInputTextarea formControlName="fumigationContainerNumbers" [autoResize]="true"></textarea>
+    <textarea class="w-full md:w-5" rows="5" pInputTextarea formControlName="fumigationContainerNumbers" [autoResize]="true"></textarea>
     <p class="mb-2 mt-4 ml-1 text-700 ">Name & Address of Exporter:</p>
-    <textarea class="w-full md:w-7" rows="5" pInputTextarea formControlName="exporterNameAndAddress" [autoResize]="true"></textarea>
+    <textarea class="w-full md:w-5" rows="5" pInputTextarea formControlName="exporterNameAndAddress" [autoResize]="true"></textarea>
     <p class="mb-2 mt-4 ml-1 text-700 ">Name & Address of Importer:</p>
-    <textarea class="w-full md:w-7" rows="5" pInputTextarea formControlName="importerNameAndAddress" [autoResize]="true"></textarea>
+    <textarea class="w-full md:w-5" rows="5" pInputTextarea formControlName="importerNameAndAddress" [autoResize]="true"></textarea>
     <p class="mb-2 mt-4 ml-1 text-700 ">Type and description of cargo:</p>
-    <input class="w-full md:w-7" type="text" pInputText formControlName="cargoDescription"/>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="cargoDescription"/>
     <p class="mb-2 mt-4 ml-1 text-700 ">Country & Port of Destination:</p>
-    <input class="w-full md:w-7" type="text" pInputText formControlName="destinationPort"/>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="destinationPort"/>
     <p class="mb-2 mt-4 ml-1 text-700 ">Invoice Number /BL.NO.:</p>
-    <input class="w-full md:w-7" type="text" pInputText formControlName="invoiceNumber"/>
+    <input class="w-full md:w-5" type="text" pInputText formControlName="invoiceNumber"/>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Dimensions for FCL:</p>
+    <span class="w-full md:w-5">
+        <input type="text" pInputText formControlName="cotainerHeight" placeholder="Ex.: 13"/> X 
+        <input type="text" pInputText formControlName="containerWidth" placeholder="Ex.: 20"/>
+    </span>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Material Quantity Information:</p>
+    <span formGroupName="materialQuantityInfo" class="w-full md:w-5">
+        <input class="mr-2" type="text" pInputText formControlName="noOfPallets" placeholder="No. of Pallets"/>
+        <input class="mr-2" type="text" pInputText formControlName="noOfBoxes" placeholder="No. of Boxes"/>
+        <input type="text" pInputText formControlName="totalArea" placeholder="Area in SQM"/>
+    </span>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Material Weight Information:</p>
+    <span formGroupName="materialWeightInfo" class="w-full md:w-5">
+        <input class="mr-2" type="text" pInputText formControlName="netWeight" placeholder="Net Weight (KGS)"/>
+        <input type="text" pInputText formControlName="grossWeight" placeholder="Gross Weight (KGS)"/>
+    </span>
+    <p class="mb-2 mt-4 ml-1 text-700 ">Packaging Material:</p>
+    <p-dropdown styleClass="w-full md:w-5" [options]="packagingMaterialOptions" [editable]="true" formControlName="packagingMaterial" placeholder="Ex. Pallet Packing"></p-dropdown>
+    <div class="flex align-items-center justify-content-center">
+        <p-button class="block mt-6" styleClass="w-9rem"  label="Submit" icon="pi pi-check"></p-button>
+    </div>    
 </form>
