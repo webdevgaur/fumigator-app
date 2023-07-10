@@ -8,25 +8,31 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch:'full'
+    pathMatch: 'full'
   },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: '',
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'create-new',
+        loadChildren: () => import('./modules/create-new/create-new.module').then(m => m.CreateNewModule),
+      },
+      {
+        path: 'view-previous',
+        loadChildren: () => import('./modules/view-previous/view-previous.module').then(m => m.ViewPreviousModule),
+      },
+    ]
   },
-  {
-    path: 'create-new',
-    loadChildren: () => import('./modules/create-new/create-new.module').then(m => m.CreateNewModule),
-  },
-  {
-    path: 'view-previous',
-    loadChildren: () => import('./modules/view-previous/view-previous.module').then(m => m.ViewPreviousModule),
-  },
+
 ];
 
 @NgModule({

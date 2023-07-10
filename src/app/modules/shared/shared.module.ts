@@ -9,6 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [],
@@ -24,6 +25,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     CalendarModule,
     InputNumberModule,
     InputTextareaModule,
+    DialogModule,
   ]
 })
 export class SharedModule { }

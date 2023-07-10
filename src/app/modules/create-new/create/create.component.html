@@ -1,57 +1,191 @@
-<form class="m-5 py-5" [formGroup]="fumigationForm">
-    <p class="mb-2 ml-1 text-700 ">Treatment Certificate No:</p>
+
+
+<form class="p-8" [formGroup]="fumigationForm">
+    <p class="mb-2 ml-1 text-700 font-semibold">Treatment Certificate No:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="treatmentCertificateNumber"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Shipping mark or brand:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Shipping mark or brand:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="brandName"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Date of issue:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Date of issue:</p>
     <p-calendar styleClass="w-full md:w-5" formControlName="dateOfIssue" dateFormat="dd M yy" [showIcon]="true" [showButtonBar]="true"></p-calendar>
     <p class="mb-2 mt-4 ml-1 text-700 ">Name of fumigant:</p>
     <p-dropdown styleClass="w-full md:w-5" [options]="fumigantOptions" formControlName="fumigantName"></p-dropdown>    
-    <p class="mb-2 mt-4 ml-1 text-700 ">Date of fumigation:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Date of fumigation:</p>
     <p-calendar styleClass="w-full md:w-5" formControlName="fumigationDate" dateFormat="dd M yy" [showIcon]="true" [showButtonBar]="true"></p-calendar>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Place of fumigation:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Place of fumigation:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="fumigationPlace"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Port & Country of loading:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Port & Country of loading:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="fumigationLoadingPort"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Dosage of Fumigant:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Dosage of Fumigant:</p>
     <p-dropdown styleClass="w-full md:w-5" [options]="fumigationDosageOptions" formControlName="fumigationDosage"></p-dropdown>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Duration of Fumigation (in Hours):</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Duration of Fumigation (in Hours):</p>
     <p-dropdown styleClass="w-full md:w-5" [options]="fumigationDurationOptions" formControlName="fumigationDuration"></p-dropdown>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Minimum ambient Temperature during fumigation (°C):</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Minimum ambient Temperature during fumigation (°C):</p>
     <p-inputNumber class="w-full" styleClass="w-full md:w-5" inputId="integeronly" formControlName="fumigationTemperature"></p-inputNumber>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Fumigation performed under gastight sheets:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Fumigation performed under gastight sheets:</p>
     <p-dropdown styleClass="w-full md:w-5" [options]="isFumigationGastightOptions" formControlName="isFumigationGastight"></p-dropdown>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Container Number (or numerical link)./Seal Number:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Container Number (or numerical link)./Seal Number:</p>
     <textarea class="w-full md:w-5" rows="5" pInputTextarea formControlName="fumigationContainerNumbers" [autoResize]="true"></textarea>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Name & Address of Exporter:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Name & Address of Exporter:</p>
     <textarea class="w-full md:w-5" rows="5" pInputTextarea formControlName="exporterNameAndAddress" [autoResize]="true"></textarea>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Name & Address of Importer:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Name & Address of Importer:</p>
     <textarea class="w-full md:w-5" rows="5" pInputTextarea formControlName="importerNameAndAddress" [autoResize]="true"></textarea>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Type and description of cargo:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Type and description of cargo:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="cargoDescription"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Country & Port of Destination:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Country & Port of Destination:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="destinationPort"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Invoice Number /BL.NO.:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Invoice Number /BL.NO.:</p>
     <input class="w-full md:w-5" type="text" pInputText formControlName="invoiceNumber"/>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Dimensions for FCL:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Dimensions for FCL:</p>
     <span class="w-full md:w-5">
         <input type="text" pInputText formControlName="cotainerHeight" placeholder="Ex.: 13"/> X 
         <input type="text" pInputText formControlName="containerWidth" placeholder="Ex.: 20"/>
     </span>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Material Quantity Information:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Material Quantity Information:</p>
     <span formGroupName="materialQuantityInfo" class="w-full md:w-5">
         <input class="mr-2" type="text" pInputText formControlName="noOfPallets" placeholder="No. of Pallets"/>
         <input class="mr-2" type="text" pInputText formControlName="noOfBoxes" placeholder="No. of Boxes"/>
         <input type="text" pInputText formControlName="totalArea" placeholder="Area in SQM"/>
     </span>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Material Weight Information:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Material Weight Information:</p>
     <span formGroupName="materialWeightInfo" class="w-full md:w-5">
         <input class="mr-2" type="text" pInputText formControlName="netWeight" placeholder="Net Weight (KGS)"/>
         <input type="text" pInputText formControlName="grossWeight" placeholder="Gross Weight (KGS)"/>
     </span>
-    <p class="mb-2 mt-4 ml-1 text-700 ">Packaging Material:</p>
+    <p class="mb-2 mt-4 ml-1 text-700 font-semibold">Packaging Material:</p>
     <p-dropdown styleClass="w-full md:w-5" [options]="packagingMaterialOptions" [editable]="true" formControlName="packagingMaterial" placeholder="Ex. Pallet Packing"></p-dropdown>
     <div class="flex align-items-center justify-content-center">
-        <p-button class="block mt-6" styleClass="w-9rem"  label="Submit" icon="pi pi-check"></p-button>
+        <p-button class="block mt-6" styleClass="w-9rem"  label="Submit" (onClick)="submitInfo()" icon="pi pi-check"></p-button>
     </div>    
 </form>
+
+<p-dialog header="Header" [(visible)]="isReadyForSubmit" [modal]="true" [style]="{ width: '80vw' }">
+    <ng-template pTemplate="header">
+        <span class="text-xl font-bold flex justify-content-center">
+            <p class="text-center">Certificate preview</p>
+        </span>
+    </ng-template>
+    <div id="license-html">
+        <div class="flex flex-column align-items-center border-2 mx-5">
+        <div class="bg-gray-600 p-1 text-xl font-bold text-white border-900 w-full text-center border-1">
+                Fumigation Certificate
+        </div>
+        <div class="grid w-full border-bottom-2">
+            <span class="col text-center border-right-2">(Dte. PPQ&S Regd. No.)</span>
+            <span class="col text-center border-right-2">Dated:</span>
+            <span class="col text-center border-right-2">Treatment Certificate No:</span>
+            <span class="col text-center">Date of Issue</span>
+        </div>
+        <div class="grid w-full border-bottom-2">
+            <span class="col text-center border-right-2">851/MB</span>
+            <span class="col text-center border-right-2">21/01/2022</span>
+            <span class="col text-center border-right-2">{{treatmentCertificateNumber?.value}}</span>
+            <span class="col text-center">{{dateOfIssue?.value | date: 'dd/MM/yyyy'}}</span>
+        </div>
+        <div class="w-full border-bottom-2 px-5">
+            <p class="p-2">{{certificationDeclaration}}</p>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Details of Treatment</div>
+            <div class="flex-1 pl-2">In accordance with NSPM-12/ISPM-15</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Name of Fumigant</div>
+            <div class="flex-1 pl-2">{{fumigantName?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Date of Fumigation</div>
+            <div class="flex-1 pl-2">{{fumigationDate?.value | date: 'dd/MM/yyyy'}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Place of Fumigation</div>
+            <div class="flex-1 pl-2">{{fumigationPlace?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Port & Country of Loading</div>
+            <div class="flex-1 pl-2">{{fumigationLoadingPort?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Dosage of Fumigant</div>
+            <div class="flex-1 pl-2">{{fumigationDosage?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Duration of Fumigation (in Hours)</div>
+            <div class="flex-1 pl-2">{{fumigationDuration?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Minimum ambient Temperature during Fumigation (°C)</div>
+            <div class="flex-1 pl-2">{{fumigationTemperature?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Fumigation performed under gastight sheets</div>
+            <div class="flex-1 pl-2">{{isFumigationGastight?.value}}</div>
+        </div>
+        <div class="w-full border-bottom-2">
+            <p class="p-1 text-center font-medium">Description of Goods</p>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Container Number (or numerical link)/Seal Number</div>
+            <div class="flex-1 pl-2">{{fumigationContainerNumbers?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Name & Address of Exporter</div>
+            <div class="flex-1 pl-2">{{exporterNameAndAddress?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Name & Address of Importer</div>
+            <div class="flex-1 pl-2">{{importerNameAndAddress?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Type & description of cargo</div>
+            <div class="flex-1 pl-2">{{cargoDescription?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Country & Port of Destination</div>
+            <div class="flex-1 pl-2">{{destinationPort?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Invoice Number /BL.NO.</div>
+            <div class="flex-1 pl-2">{{invoiceNumber?.value}}</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Quantity (MTs)/ No of packages/ No of pieces</div>
+            <div class="flex-1 pl-2">{{cotainerHeight?.value}} X {{containerWidth?.value}} FCL {{noOfBoxes?.value}} BOXES {{totalArea?.value}} SQM</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Net Weight/ Gross Weight</div>
+            <div class="flex-1 pl-2">Net Weight: {{netWeight?.value}} KGS, Gross Weight: {{grossWeight?.value}} KGS</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Description of packaging material</div>
+            <div class="flex-1 pl-2">{{packagingMaterial?.value}} {{cotainerHeight?.value}} X {{containerWidth?.value}} FCL {{noOfPallets?.value}} PALLETS</div>
+        </div>
+        <div class="flex w-full border-bottom-2">
+            <div class="flex-1 pl-2 border-right-2">Shipping mark or brand</div>
+            <div class="flex-1 pl-2">{{brandName?.value}}</div>
+        </div>
+        <div class="flex flex-column w-full pl-2">
+            <p><span class="font-medium">Additional Declaration:</span> ISPM 15 Completed, Enclosure has been ventilated to below 5 ppm v/v MBr Degassed Dated.: {{dateOfIssue?.value | date: 'dd/MM/yyyy'}}</p>
+            <p><span class="font-medium">Name:</span> Mayank Dharmendra Bhardwaj</p>
+            <p><span class="font-medium">Accreditation Number:</span> 851010122</p>
+        </div>
+        <div class="grid py-2 w-full h-20rem">
+            <div class="col-8 flex flex-column justify-content-end">
+                <p class="text-right pr-5 font-medium mb-2">Certificate is valid with authentic OR QR Code Only</p>
+                <p class="text-right pr-5">Date: {{dateOfIssue?.value | date: 'dd/MM/yyyy'}}</p>
+                <small class="block pl-1">*Consignment details as declared by shipper.</small>
+                <small class="block pl-1">*No financial liability attaches to the certifying company with respect to this certificate.</small>
+            </div>
+            <div class="col-4 flex justify-content-end pr-3 ">
+                <img src="../../../../assets/qr-code-api-6.png" class="w-18rem h-18rem" alt="sample qr code" >
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="isReadyForSubmit = false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
+
+

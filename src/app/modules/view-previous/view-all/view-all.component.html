@@ -1,1 +1,6 @@
-<p>view-all works!</p>
+<h1 class="mb-3">Data available in Firestore -</h1>
+<div *ngFor="let item of data$ | async" class="bg-blue-100 mb-2">
+    <pre>
+        {{item | json}}
+    </pre>
+</div>

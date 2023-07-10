@@ -12,16 +12,20 @@ export class AuthService implements OnInit {
   auth: Auth = getAuth();
 
   user$: Observable<any> = authState(this.auth);
+  
+
+  isUserLoggedIn: boolean = !!this.auth.currentUser;
 
   private router = inject(Router);
 
   ngOnInit(): void {
-    
+    this.user$.subscribe(user => {
+      console.log(user);
+    });
   }
 
   login(email: string, password: string) {
     signInWithEmailAndPassword(this.auth, email, password).then(() => {
-      localStorage.setItem('token', 'true');
       this.router.navigate(['/home']);
     }, (error) => {
       alert(error.message);
@@ -31,7 +35,6 @@ export class AuthService implements OnInit {
 
   logOut() {
     signOut(this.auth);
-    localStorage.removeItem('token');    
     this.router.navigate(['/login']);
   }
 
